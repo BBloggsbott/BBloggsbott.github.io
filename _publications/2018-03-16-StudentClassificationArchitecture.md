@@ -1,5 +1,5 @@
 ---
-title: "An architecture for student classification based on behavioural and academic perspectives using deep learning in a Big Data Environment"
+title: "An Architecture for Student Classification based on Behavioural and Academic Perspectives using Deep Learning in a Big Data Environment"
 collection: publications
 permalink: /publication/2018-03-16-StudentClassificationArchitecture
 excerpt:
