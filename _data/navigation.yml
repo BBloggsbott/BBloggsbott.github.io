@@ -4,10 +4,10 @@ main:
     url: /publications/
 
   - title: "CV"
-    url: /cv/
+    url: /files/Resume.pdf
 
   - title: "Kaggle"
     url: https://kaggle.com/bbloggsbott
 
   - title: "Medium"
-    url: https://medium.com/@bbloggabott
+    url: https://medium.com/@bbloggsbott
