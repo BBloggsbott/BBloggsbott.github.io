@@ -8,4 +8,4 @@ venue: 'INDIACom'
 paperurl:
 citation:
 ---
-[View paper here](http://academicpages.github.io/files/paper2.pdf)
+[View paper here](https://www.bvicam.ac.in/news/INDIACom%202018%20Proceedings/Main/papers/2132.pdf)
