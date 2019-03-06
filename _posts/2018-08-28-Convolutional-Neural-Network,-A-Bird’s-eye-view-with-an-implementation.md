@@ -1,4 +1,6 @@
-This kernel  is aimed at giving a simple understanding of a Convolutional Neural  Network (CNN). This will be achieved in the following order:
+This article  is aimed at giving a simple understanding of a Convolutional Neural  Network (CNN). 
+
+This will be achieved in the following order:
 
 - Understanding the Convolution operation
 - Understanding Neural Networks
