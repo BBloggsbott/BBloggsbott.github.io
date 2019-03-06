@@ -1,5 +1,3 @@
-# Decision Trees — A Bird’s eye view and an Implementation
-
 ## What is achieved in this article?
 
 * Understanding the definition of Decision Trees
