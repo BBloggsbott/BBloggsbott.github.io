@@ -155,11 +155,9 @@ print("accuracy = " + str(accuracy2))
 
 #### Visualizing the decision tree without the `max_depth` parameter
 
-```pytho
+```python
 dot_data = StringIO()
-export_graphviz(classifier2, out_file=dot_data,  
-                filled=True, rounded=True,
-                special_characters=True)
+export_graphviz(classifier2, out_file=dot_data, filled=True, rounded=True, special_characters=True)
 graph = pydotplus.graph_from_dot_data(dot_data.getvalue())  
 Image(graph.create_png())
 ```
