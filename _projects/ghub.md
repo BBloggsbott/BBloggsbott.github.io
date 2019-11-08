@@ -1,1 +1,0 @@
-Copy the URL of this page and pase it in GHub to complete OAuth
