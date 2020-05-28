@@ -81,7 +81,7 @@ analytics:
 # Site Author
 author:
   name             : "Vishal"
-  avatar           : "profile.png"
+  avatar           : "profile.jpg"
   bio              : "Student at SASTRA Deemed to be University. Interested in Machine Learning and it's applications"
   location         : "Chennai"
   employer         :
@@ -113,6 +113,7 @@ author:
   xing             :
   youtube          :
   wikipedia        :
+  calendar         : "https://bbloggsbott.github.io/calendar"
 
 
 # Reading Files
