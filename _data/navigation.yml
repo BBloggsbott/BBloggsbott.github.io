@@ -3,9 +3,6 @@ main:
   - title: "Résumé"
     url: /files/Resume.pdf
 
-  - title: "Blog Posts"
-    url: /year-archive/
-
   - title: "Kaggle"
     url: https://kaggle.com/bbloggsbott
 
