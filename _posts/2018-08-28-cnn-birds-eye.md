@@ -7,6 +7,8 @@ tags:
   - neural networks
 ---
 
+{% include base_path %}
+
 ## What is Convolution?
 >In mathematics (and, in particular, functional analysis) convolution is a mathematical operation on two functions (f and g) to produce a third function that expresses how the shape of one is modified by the other.<br>[Source](https://en.wikipedia.org/wiki/Convolution)
 
@@ -26,14 +28,14 @@ Check out [this](https://github.com/vdumoulin/conv_arithmetic) link for a visual
 An ANN is a collection of smaller processing units called the artificial neurons which loosely resemble the biological neuron.
 
 ### Biological Neural Circuit
-![Biological Neuron](images/posts/2018-08-28-cnn-birds-eye/bio-neuron.png)
+![Biological Neuron]({{ base_path }}/images/posts/2018-08-28-cnn-birds-eye/bio-neuron.png)
 
 [Source](https://en.wikipedia.org/wiki/Neural_circuit).
 
 A collection of interconnected circuits make a network.
 
 ### Artificial Neural Network
-![Artificial Neural Network](images/posts/2018-08-28-cnn-birds-eye/ann.png)
+![Artificial Neural Network]({{ base_path }}/images/posts/2018-08-28-cnn-birds-eye/ann.png)
 
 [Source](https://en.wikipedia.org/wiki/Artificial_neural_network)
 
@@ -95,13 +97,13 @@ def display_image(x, img_size, number_of_images):
 ```python
 display_image(train_data, 32, 16)
 ```
-![Training Samples](images/posts/2018-08-28-cnn-birds-eye/train-sample.png)
+![Training Samples]({{ base_path }}/images/posts/2018-08-28-cnn-birds-eye/train-sample.png)
 
 ### The test set
 ```python
 display_image(test_data, 32, 16)
 ```
-![Testing Samples](images/posts/2018-08-28-cnn-birds-eye/test-sample.png)
+![Testing Samples]({{ base_path }}/images/posts/2018-08-28-cnn-birds-eye/test-sample.png)
 
 ## Data preprocessing
 
