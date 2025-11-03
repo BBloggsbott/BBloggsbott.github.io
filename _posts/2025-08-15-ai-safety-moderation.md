@@ -11,9 +11,9 @@ tags:
 
 Ever since Large Language Models (LLMs) became popular, people have been using them to search for, discuss, and understand a lot of things. But have you ever noticed how there are some questions an LLM just won't answer? You might ask something that seems harmless, and instead of an answer, you get a polite refusal.
 
-![Example 1]({{ base_path }}/images/posts/2025-08-16-ai-safety-moderation/example-1.png)
-![Example 2]({{ base_path }}/images/posts/2025-08-16-ai-safety-moderation/example-2.png)
-![Example 3]({{ base_path }}/images/posts/2025-08-16-ai-safety-moderation/example-3.png)
+![Example 1]({{ base_path }}/images/posts/2025-08-15-ai-safety-moderation/example-1.png)
+![Example 2]({{ base_path }}/images/posts/2025-08-15-ai-safety-moderation/example-2.png)
+![Example 3]({{ base_path }}/images/posts/2025-08-15-ai-safety-moderation/example-3.png)
 
 This isn't a glitch; it's a feature. It's a sign of a critical and rapidly evolving field known as **LLM Safety and Moderation**. To understand why and how this happens, we first need to look at two core ideas: Alignment and Safety.
 
