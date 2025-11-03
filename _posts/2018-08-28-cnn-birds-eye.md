@@ -15,6 +15,7 @@ tags:
 This operation is used in several areas such as probability, statistics, computer vision, natural language processing, image and signal processing, engineering, and differential equations.
 
 This operation is mathematically represented as
+
 $$
 f(t) \cdot g(t) = \int_{-\infty}^{\infty}{f(\tau)g(t-\tau)\ d\tau}
 $$

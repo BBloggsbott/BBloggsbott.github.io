@@ -6,6 +6,8 @@ tags:
   - machine learning
 ---
 
+{% include base_path %}
+
 ## What are Decision Trees?
 
 >A decision tree is a flowchart-like structure in which each internal node represents a “test” on an attribute (e.g. whether a coin flip comes up heads or tails), each branch represents the outcome of the test, and each leaf node represents a class label (decision taken after computing all attributes). <br>
@@ -51,12 +53,12 @@ corr = data.corr()
 # Generating a heatmap
 sns.heatmap(corr,xticklabels=corr.columns, yticklabels=corr.columns)
 ```
-![correlation-heatmap](images/posts/2018-08-27-decision-trees-birds-eye/correlation-heatmap.png)
+![correlation-heatmap]({{ base_path }}/images/posts/2018-08-27-decision-trees-birds-eye/correlation-heatmap.png)
 
 ```python
 sns.pairplot(data)
 ```
-![pairplot](images/posts/2018-08-27-decision-trees-birds-eye/pairplot.png)
+![pairplot]({{ base_path }}/images/posts/2018-08-27-decision-trees-birds-eye/pairplot.png)
 
 In the above two plots, you can clearly see that the pairs of independent variables with a higher correlation have a more linear scatter plot than the independent variables having a relatively lesser correlation.
 
@@ -116,7 +118,7 @@ export_graphviz(classifier, out_file=dot_data,
 graph = pydotplus.graph_from_dot_data(dot_data.getvalue())  
 Image(graph.create_png())
 ```
-![tree-short](images/posts/2018-08-27-decision-trees-birds-eye/tree-short.png)
+![tree-short]({{ base_path }}/images/posts/2018-08-27-decision-trees-birds-eye/tree-short.png)
 
 ### Building a model without the max_depth parameter
 
@@ -138,7 +140,7 @@ export_graphviz(classifier2, out_file=dot_data,
 graph = pydotplus.graph_from_dot_data(dot_data.getvalue())  
 Image(graph.create_png())
 ```
-![tree-tall](images/posts/2018-08-27-decision-trees-birds-eye/tree-tall.jpg)
+![tree-tall]({{ base_path }}/images/posts/2018-08-27-decision-trees-birds-eye/tree-tall.jpg)
 
 Now, consider the leaf nodes (terminal nodes) of the tree with and without the max_depth parameter. You will notice that the entropy of all the terminal nodes is `zero` in the tree without the `max_depth` parameter and non-zero in three with that parameter. This is because when the parameter is not mentioned, the split recursively takes place till the terminal node has an entropy of zero.
 
