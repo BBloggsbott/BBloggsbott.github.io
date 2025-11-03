@@ -31,14 +31,14 @@ $$
 x = (x_1, x_2, ..., x_n)
 $$
 
-with $n$ features, to be classified as one of the $k$ classes represented as
+with $$n$$ features, to be classified as one of the $$k$ classes represented as
 
 $$
 p(C_x | x)\\
 read\ as\ the\ probability\ of\ C_k ,\ given\ x
 $$
 
-These probabilities are used to determine which class an instance $x$ belongs to.
+These probabilities are used to determine which class an instance $$x$$ belongs to.
 
 The problem with this representation is that if the value of $n$ was very large or if a feature could take a large number of values, the size of the probability tables becomes very large. To solve this problem, Bayes Theorem is used to decompose this conditional probability into
 
@@ -46,7 +46,7 @@ $$
 p(C_k | x) = \frac{p(C_k)\cdot p(x | C_k)}{p(x)}
 $$
 
-and since $x$ is a vector, it becomes
+and since $$x$$ is a vector, it becomes
 
 $$
 p(C_k | x_1, x_2, ..., x_n) = \frac{p(C_k)\cdot p(x_1 | C_k)\cdot p(x_2 | C_k)\cdot ... \cdot p(x_n | C_k)}{p(x_1)\cdot p(x_2)\cdot ... \cdot p(x_n)}
@@ -60,7 +60,7 @@ $$
 p(x_n | C)
 $$
 
-This denotes the probability of feature $n$ having a value $x_n$ in the subset of the training data with $C_k$ as the label. This can be calculated as
+This denotes the probability of feature $$n$$ having a value $$x_n$$ in the subset of the training data with $$C_k$$ as the label. This can be calculated as
 
 $$
 p(x_n | C) =\frac{Number\ of\ times\ the\ feature\ n\ takes\ the\ value\ x_n\ when\ the\ label\ is\ C_k}{Total\ number\ of\ samples\ where\ label\ is\ C_k}
@@ -72,7 +72,7 @@ $$
 p(C_k)
 $$
 
-This denotes the probability of an instance in the training data having the label $C_k$. This can be calculated as
+This denotes the probability of an instance in the training data having the label $$C_k$$. This can be calculated as
 
 $$
 p(C_k) = \frac{Number\ of\ samples\ where\ label\ in\ C_k}{Total\ number\ of\ samples\ in\ the\ dataset}
@@ -84,7 +84,7 @@ $$
 p(x_n)
 $$
 
-This denotes the probability of feature n having a value xn in the training data. This can be calculated as
+This denotes the probability of feature n having a value $$x_n$$ in the training data. This can be calculated as
 
 $$
 p(x_n) = \frac{Number\ of\ samples\ where\ feature\ n\ has\ the\ value\ x_n}{Total\ number\ of\ samples\ in\ the\ dataset}
@@ -97,8 +97,8 @@ If you have understood the breakdown of the Naive Bayes algorithm, you might hav
 ### Information to store
 
 * For each unique value that a feature $n$ takes in the training data, we will need to store 
-  * The number of times the feature $n$ takes that value.
-  * For each unique label in the training data, the number of time the feature $n$ takes that value
+  * The number of times the feature $$n$$ takes that value.
+  * For each unique label in the training data, the number of time the feature $$n$$ takes that value
 * For each unique label, we need to store the number of times that label is present in the training data
 * Total number of samples in the dataset
 
