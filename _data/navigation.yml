@@ -10,3 +10,6 @@
 main:
   - title: "Blog Posts"
     url: /year-archive/
+  
+  - title: "Read a Paper"
+    url: /read-a-paper/

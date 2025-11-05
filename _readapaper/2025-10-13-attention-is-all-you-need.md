@@ -11,7 +11,7 @@ tags:
 
 | Original Paper link: [https://arxiv.org/abs/1706.03762](https://arxiv.org/abs/1706.03762) |
 |--|
-|PDF with additional annotations: [Download Summary]({{ base_path }}files/read-a-paper/Attention-is-All-You-Need-Summarized-Explanation.pdf)|
+|PDF with additional annotations: [Download Summary]({{ base_path }}/files/read-a-paper/Attention-is-All-You-Need-Summarized-Explanation.pdf)|
 
 
 The 2017 paper \"Attention Is All You Need\" by Vaswani et al.
