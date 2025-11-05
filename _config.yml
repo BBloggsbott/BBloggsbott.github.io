@@ -230,6 +230,9 @@ collections:
   talks:
     output: true
     permalink: /:collection/:path/
+  readapaper:
+    output: true
+    permalink: /:collection/:path
 
 
 # These settings control how pages and collections are included in the site
@@ -252,6 +255,15 @@ defaults:
     values:
       layout: single
       author_profile: true
+  # _readapaper
+  - scope:
+      path: ""
+      type: readapaper
+    values:
+      layout: single
+      author_profile: true
+      share: true
+      comments: true
   # _teaching
   # - scope:
   #     path: ""
