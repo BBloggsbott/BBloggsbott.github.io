@@ -42,25 +42,25 @@ information from one step of a sequence to the next. This persisted
 information is called the **hidden state**, which acts as the network's
 memory.
 
-- *Sequential Computation:** An RNN processes a sequence token-by-token. The hidden state at a given step, $h_t$, is a function of the input at that step, $x_t$, and the hidden state from the previous step, $h_{t-1}$. The update is governed by the following equation:
+- *Sequential Computation:** An RNN processes a sequence token-by-token. The hidden state at a given step, $$h_t$$, is a function of the input at that step, $x_t$, and the hidden state from the previous step, $$h_{t-1}$$. The update is governed by the following equation:
 
   $$h_t = \tanh(W_{hh}h_{t-1} + W_{xh}x_t + b_h)$$
 
-  - $h_t$: The new hidden state (a vector) at time step $t$, representing the network's memory after seeing the current input.
+  - $$h_t$$: The new hidden state (a vector) at time step $$t$$, representing the network's memory after seeing the current input.
 
-  - $h_{t-1}$: The hidden state from the previous step.
+  - $$h_{t-1}$$: The hidden state from the previous step.
 
-  - $x_t$: The input vector (e.g., a word embedding) for the current step.
+  - $$x_t$$: The input vector (e.g., a word embedding) for the current step.
 
-  - $W_{hh}, W_{xh}, b_h$: These are the weight matrices and bias vector that the network learns during training. Crucially, these same weights are used at every single time step.
+  - $$W_{hh}, W_{xh}, b_h$$: These are the weight matrices and bias vector that the network learns during training. Crucially, these same weights are used at every single time step.
 
     *Example: Processing \"the cat sat\"*
 
-    1. **Time Step 1 ("the"):** The network receives the vector for "the" ($x_1$) and an initial hidden state ($h_0$, usually zeros). It calculates $h_1$, which now represents "the".
+    1. **Time Step 1 ("the"):** The network receives the vector for "the" ($$x_1$$) and an initial hidden state ($$h_0$$, usually zeros). It calculates $$h_1$$, which now represents "the".
 
-    2. **Time Step 2 ("cat"):** The network receives the vector for "cat" ($x_2$) and the previous state ($h_1$). It combines them to produce $h_2$, which now represents "the cat".
+    2. **Time Step 2 ("cat"):** The network receives the vector for "cat" ($$x_2$$) and the previous state ($$h_1$$). It combines them to produce $h_2$, which now represents "the cat".
 
-    3. **Time Step 3 ("sat"):** It receives "sat" ($x_3$) and $h_2$ to produce $h_3$, a representation of the full phrase "the cat sat".
+    3. **Time Step 3 ("sat"):** It receives "sat" ($$x_3$$) and $$h_2$$ to produce $$h_3$$, a representation of the full phrase "the cat sat".
 
     This inherent sequentiality means the computation cannot be
     parallelized within a single sequence, making it slow for long
@@ -80,7 +80,7 @@ For sequence-to-sequence tasks like machine translation, RNNs were used in an **
 
 - **Decoder:** A separate RNN is initialized with the encoder's context vector. Its task is to generate the output sentence word-by-word in an **autoregressive** manner. The detailed process is as follows:
 
-  1.  **Initialization:** The decoder's first hidden state ($d_0$) is initialized with the encoder's final context vector. This is the crucial step where the summary of the input sentence is transferred.
+  1.  **Initialization:** The decoder's first hidden state ($$d_0$$) is initialized with the encoder's final context vector. This is the crucial step where the summary of the input sentence is transferred.
 
   2.  **First Word Generation:** The decoder takes a special `<start-of-sequence>` token as its first input. It processes this input and its initial hidden state to produce an output vector, which is passed through a softmax layer to create a probability distribution over the entire vocabulary. The word with the highest probability is chosen as the first output word (e.g., "die").
 
@@ -102,7 +102,7 @@ The solution was the **attention mechanism**, which was used *in conjunction wit
 
   4. Use this dynamic vector (along with its own hidden state) to generate the next word.
 
-- **Remaining Limitation:** While attention solved the information bottleneck, the encoder process itself remained sequential. The hidden states were still generated one after another, as the calculation for $h_t$ depended on $h_{t-1}$. This computational limitation was the final problem the Transformer aimed to solve.
+- **Remaining Limitation:** While attention solved the information bottleneck, the encoder process itself remained sequential. The hidden states were still generated one after another, as the calculation for $$h_t$$ depended on $$h_{t-1}$$. This computational limitation was the final problem the Transformer aimed to solve.
 
 ## The Transformer Revolution - A New Architecture
 
@@ -116,13 +116,13 @@ The foundational block of the Transformer is **self-attention**. This mechanism 
 
 - **Constant Path Length:** The path for information to travel between any two words is of length one, making it trivial to model long-range dependencies.
 
-- **Technical Implementation (Query, Key, Value):** To achieve this, each input word embedding is transformed into three distinct vectors by multiplying it with three learned weight matrices ($W^Q, W^K, W^V$):
+- **Technical Implementation (Query, Key, Value):** To achieve this, each input word embedding is transformed into three distinct vectors by multiplying it with three learned weight matrices ($$W^Q, W^K, W^V$$):
 
-  - **Query ($q_i$):** A representation of a word used to score its relevance against all other words. It effectively acts as a probe to find relevant information from the rest of the sequence.
+  - **Query ($$q_i$$):** A representation of a word used to score its relevance against all other words. It effectively acts as a probe to find relevant information from the rest of the sequence.
 
-  - **Key ($k_j$):** A representation of another word used for establishing compatibility. Its role is to be compared against the query vector. The dot product of $q_i$ and $k_j$ produces a raw compatibility score.
+  - **Key ($$k_j$$):** A representation of another word used for establishing compatibility. Its role is to be compared against the query vector. The dot product of $$q_i$$ and $$k_j$$ produces a raw compatibility score.
 
-  - **Value ($v_j$):** A representation of a word that contains its actual content or meaning. This is the vector that will be used in the final weighted sum if its corresponding key is deemed relevant.
+  - **Value ($$v_j$$):** A representation of a word that contains its actual content or meaning. This is the vector that will be used in the final weighted sum if its corresponding key is deemed relevant.
 
   The attention score is the dot product of a query and a key, and the
   final output is a weighted sum of all value vectors in the sequence.
@@ -149,7 +149,7 @@ The Transformer retains the high-level encoder-decoder framework but replaces th
 
 Training a deep stack of layers is made possible by two critical techniques applied after each sub-layer.
 
-- **Residual Connections:** To combat the vanishing gradient problem, the Transformer uses residual (or "skip") connections. The input to a sub-layer, $x$, is added directly to the output of that sub-layer, 'Sublayer(x)'. The resulting operation is 'output = x + Sublayer(x)'. This structure means the layer only needs to learn the **residual** ('F(x) = output - x'). This makes it much easier to learn identity mappings (by driving the layer's weights to zero) and allows gradients to flow unimpeded through the network via the skip connection "highway," enabling stable training of very deep models.
+- **Residual Connections:** To combat the vanishing gradient problem, the Transformer uses residual (or "skip") connections. The input to a sub-layer, $$x$$, is added directly to the output of that sub-layer, 'Sublayer(x)'. The resulting operation is 'output = x + Sublayer(x)'. This structure means the layer only needs to learn the **residual** ('F(x) = output - x'). This makes it much easier to learn identity mappings (by driving the layer's weights to zero) and allows gradients to flow unimpeded through the network via the skip connection "highway," enabling stable training of very deep models.
 
 - **Layer Normalization:** To stabilize the training process, the output of the residual connection is immediately normalized. Layer Normalization rescales the activations within a layer for each training example to have a mean of 0 and a standard deviation of 1. This ensures a consistent distribution of inputs to subsequent layers, accelerating training. The full operation is 'LayerNorm(x + Sublayer(x))'.
 
@@ -157,15 +157,15 @@ Training a deep stack of layers is made possible by two critical techniques appl
 
 The decoder's self-attention layer has a crucial modification: it is **masked**.
 
-- **Purpose:** To preserve the auto-regressive property. When predicting the word at position $i$, the model must only be allowed to see the words at positions less than $i$. It cannot "cheat" by looking at future words, which would make learning trivial and cause it to fail during real-world inference.
+- **Purpose:** To preserve the auto-regressive property. When predicting the word at position $$i$$, the model must only be allowed to see the words at positions less than $$i$$. It cannot "cheat" by looking at future words, which would make learning trivial and cause it to fail during real-world inference.
 
 - **Mechanism:** The mask is implemented directly within the attention calculation before the softmax step.
 
-  1. **Score Calculation:** The raw attention scores are calculated via the matrix multiplication $QK^{T}$.
+  1. **Score Calculation:** The raw attention scores are calculated via the matrix multiplication $$QK^{T}$$.
 
-  2. **Mask Application:** A mask is added to the score matrix, setting all values corresponding to future positions (the upper triangle of the matrix) to negative infinity ($-\infty$).
+  2. **Mask Application:** A mask is added to the score matrix, setting all values corresponding to future positions (the upper triangle of the matrix) to negative infinity ($$-\infty$$).
 
-  3. **Softmax:** When the softmax function is applied to these scores, $e$ raised to $-\infty$ becomes $0$. This ensures that the attention weights for all future words are zero, and they contribute nothing to the representation of the current word.
+  3. **Softmax:** When the softmax function is applied to these scores, $$e$$ raised to $$-\infty$$ becomes $$0$$. This ensures that the attention weights for all future words are zero, and they contribute nothing to the representation of the current word.
 
 ## The Core Mechanisms of the Transformer in Detail
 
@@ -178,7 +178,7 @@ The decoder's self-attention layer has a crucial modification: it is **masked**.
   $$PE_{(pos, 2i)} = \sin(\text{pos} / 10000^{2i/d_{\text{model}}})\\
   PE_{(pos, 2i+1)} = \cos(\text{pos} / 10000^{2i/d_{\text{model}}})$$
 
-  The pairing of sine (for even dimensions) and cosine (for odd dimensions) is a critical design choice. It allows the positional encoding for any position $pos+k$ to be represented as a linear transformation (a **rotation**) of the encoding at $pos$. This property makes it easy for the model's linear layers to learn about relative positions.
+  The pairing of sine (for even dimensions) and cosine (for odd dimensions) is a critical design choice. It allows the positional encoding for any position $$pos+k$$ to be represented as a linear transformation (a **rotation**) of the encoding at $$pos$$. This property makes it easy for the model's linear layers to learn about relative positions.
 
 ### Scaled Dot-Product Attention
 
@@ -194,7 +194,7 @@ $$\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)
 
   - **Value (V):** A representation of all words that gets aggregated in the final weighted sum.
 
-- **Scaling:** The dot-product scores are scaled by $\sqrt{d_k}$ (the dimension of the key vectors) to prevent the softmax function from entering regions with small gradients, thus stabilizing training.
+- **Scaling:** The dot-product scores are scaled by $$\sqrt{d_k}$$ (the dimension of the key vectors) to prevent the softmax function from entering regions with small gradients, thus stabilizing training.
 
 ### Multi-Head Attention
 

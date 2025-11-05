@@ -40,7 +40,7 @@ $$
 
 These probabilities are used to determine which class an instance $$x$$ belongs to.
 
-The problem with this representation is that if the value of $n$ was very large or if a feature could take a large number of values, the size of the probability tables becomes very large. To solve this problem, Bayes Theorem is used to decompose this conditional probability into
+The problem with this representation is that if the value of $$n$$ was very large or if a feature could take a large number of values, the size of the probability tables becomes very large. To solve this problem, Bayes Theorem is used to decompose this conditional probability into
 
 $$
 p(C_k | x) = \frac{p(C_k)\cdot p(x | C_k)}{p(x)}
