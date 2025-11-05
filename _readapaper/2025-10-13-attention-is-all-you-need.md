@@ -42,7 +42,7 @@ information from one step of a sequence to the next. This persisted
 information is called the **hidden state**, which acts as the network's
 memory.
 
-- *Sequential Computation:** An RNN processes a sequence token-by-token. The hidden state at a given step, $$h_t$$, is a function of the input at that step, $x_t$, and the hidden state from the previous step, $$h_{t-1}$$. The update is governed by the following equation:
+- **Sequential Computation:** An RNN processes a sequence token-by-token. The hidden state at a given step, $$h_t$$, is a function of the input at that step, $x_t$, and the hidden state from the previous step, $$h_{t-1}$$. The update is governed by the following equation:
 
   $$h_t = \tanh(W_{hh}h_{t-1} + W_{xh}x_t + b_h)$$
 
