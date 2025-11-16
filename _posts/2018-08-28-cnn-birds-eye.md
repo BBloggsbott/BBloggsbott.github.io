@@ -5,6 +5,8 @@ permalink: /posts/2018/08/cnn-birds-eye/
 tags:
   - machine learning
   - neural networks
+redirect_from:
+    - /Convolutional-Neural-Network,-A-Bird-s-eye-view-with-an-implementation
 ---
 
 {% include base_path %}

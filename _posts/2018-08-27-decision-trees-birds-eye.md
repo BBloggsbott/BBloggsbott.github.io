@@ -4,6 +4,8 @@ date: 2018-08-27
 permalink: /posts/2018/08/decision-trees-birds-eye/
 tags:
   - machine learning
+redirect_from:
+  - /Decision-Trees,-A-Bird-s-eye-view-and-an-Implementation
 ---
 
 {% include base_path %}
