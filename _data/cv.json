@@ -50,11 +50,29 @@
       "courses": ["Data Structures", "Algorithms", "Database Management Systems", "Artificial Intelligence", "Object-Oriented Design"]
     }
   ],
-  "skills": ["FastAPI", "Spring Boot", "Redis", "Docker", "Celery", "TensorFlow",
-    "PyTorch", "Scikit-Learn", "NumPy", "Pandas", "AWS", "CI/CD (Jenkins, AWS CodePipeline)", "Databricks", "Git",
-    "RDBMS (SQL)", "MongoDB (NoSQL)", "Elasticsearch"
+  "skills": [
+    {
+      "name": "Programming Languages",
+      "keywords": ["Python", "Java"]
+    },
+    {
+      "name": "Backend & Microservices",
+      "keywords": ["Spring Boot", "FastAPI", "Redis", "Docker", "Celery"]
+    },
+    {
+      "name": "ML & Data Science",
+      "keywords": ["TensorFlow", "PyTorch", "Scikit-Learn", "NumPy", "Pandas"]
+    },
+    {
+      "name": "Cloud & MLOps",
+      "keywords": ["AWS", "CI/CD (Jenkins, AWS CodePipeline)", "Kubernetes", "Databricks", "Git"]
+    },
+    {
+      "name": "Databases",
+      "keywords": ["RDBMS (SQL)", "MongoDB (NoSQL)", "Elasticsearch"]
+    }
   ],
-  "languages": ["Python", "Java"],
+  "languages": [],
   "interests": [],
   "references": [],
   "publications": [],
