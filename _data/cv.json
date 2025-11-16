@@ -2,7 +2,7 @@
   "basics": {
     "name": "Vishal Ramesh",
     "email": "vishal27.rs@outlook.com",
-    "phone": "",
+    "phone": null,
     "website": "https://bbloggsbott.github.io",
     "summary": "Results-driven Machine Learning Engineer with 5 years of experience designing, building, and deploying scalable, end-to-end ML solutions in production cloud environments. Specializes in developing production-grade NLP and Decision Support systems, with hands-on experience in microservice architecture (Java, Spring Boot) and robust MLOps pipelines. Proven ability to translate complex enterprise problems into impactful, data-driven applications.",
     "location": {
