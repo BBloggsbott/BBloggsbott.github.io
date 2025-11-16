@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bbloggsbott.github.io/sitemap.xml
+
