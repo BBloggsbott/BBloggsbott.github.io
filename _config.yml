@@ -126,6 +126,12 @@ atom_feed:
   path                   : # blank (default) uses feed.xml
 
 
+feed:
+  collections:
+    readapaper:
+      path: "/feed/read-a-paper.xml"
+
+
 # SEO Related
 google_site_verification :
 bing_site_verification   :
