@@ -128,6 +128,8 @@ atom_feed:
 
 feed:
   collections:
+    posts:
+      path: "/feed/blog.xml"
     readapaper:
       path: "/feed/read-a-paper.xml"
 
