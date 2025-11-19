@@ -7,7 +7,7 @@ permalink: /read-a-paper/
 {% include base_path %}
 
 {% if site.atom_feed.hide != true %}
-  <li><a href="/feed/read-a-paper.xml"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].feed_label | default: "Feed" }}</a></li>
+  <a href="/feed/read-a-paper.xml"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].feed_label | default: "Feed" }}</a><br>
 {% endif %}
 
 I started this series with a clear mission: to bridge the gap between complex academic research and everyday understanding.
