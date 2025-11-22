@@ -5,6 +5,7 @@ permalink: /posts/2022/05/online-naive-bayes/
 tags:
   - machine learning
   - machine learning engineering
+comments: true
 ---
 
 {% include base_path %}

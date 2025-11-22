@@ -5,6 +5,7 @@ permalink: /posts/2025/08/ai-safety/
 tags:
   - machine learning
   - llm
+comments: true
 ---
 
 {% include base_path %}

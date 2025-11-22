@@ -5,6 +5,7 @@ permalink: /posts/2022/04/maching-learning-monitoring/
 tags:
   - machine learning
   - mlops
+comments: true
 ---
 
 {% include base_path %}

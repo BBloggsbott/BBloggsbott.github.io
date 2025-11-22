@@ -5,6 +5,7 @@ permalink: /read-a-paper/attention-is-all-you-need/
 tags:
   - machine learning
   - llm
+comments: true
 ---
 
 {% include base_path %}

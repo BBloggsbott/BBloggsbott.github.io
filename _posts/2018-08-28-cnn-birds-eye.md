@@ -7,6 +7,7 @@ tags:
   - neural networks
 redirect_from:
     - /Convolutional-Neural-Network,-A-Bird-s-eye-view-with-an-implementation
+comments: true
 ---
 
 {% include base_path %}

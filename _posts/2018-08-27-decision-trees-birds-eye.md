@@ -6,6 +6,7 @@ tags:
   - machine learning
 redirect_from:
   - /Decision-Trees,-A-Bird-s-eye-view-and-an-Implementation
+comments: true
 ---
 
 {% include base_path %}

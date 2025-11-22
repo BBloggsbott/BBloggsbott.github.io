@@ -5,6 +5,7 @@ permalink: /posts/2022/04/feature-stores/
 tags:
   - machine learning
   - mlops
+comments: true
 ---
 
 {% include base_path %}

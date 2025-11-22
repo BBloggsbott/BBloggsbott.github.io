@@ -4,6 +4,7 @@ date: 2018-09-12
 permalink: /posts/2018/09/feature-selection/
 tags:
   - machine learning
+comments: true
 ---
 
 {% include base_path %}
