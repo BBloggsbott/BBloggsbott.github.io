@@ -6,7 +6,9 @@ author_profile: true
 ---
 
 {% include base_path %}
-{% include group-by-array collection=site.posts field="tags" %}
+{% assign papers = site['readapaper'] | default: site.readapaper %}
+{% assign all_posts = site.posts | concat: papers %}
+{% include group-by-array collection=all_posts field="tags" %}
 
 {% for tag in group_names %}
   {% assign posts = group_items[forloop.index0] %}
