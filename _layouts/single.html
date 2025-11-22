@@ -89,7 +89,7 @@ layout: default
     </div>
 
     {% if site.comments.provider and page.comments %}
-      <!--{% include comments.html %}-->
+      {% comment %}<!--{% include comments.html %}-->{% endcomment %}
       {% include utterances-comments.html %}
     {% endif %}
   </article>
