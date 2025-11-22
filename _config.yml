@@ -256,6 +256,7 @@ defaults:
       comments: true
       share: true
       related: true
+      subscription: true
   # _pages
   - scope:
       path: ""
@@ -263,6 +264,7 @@ defaults:
     values:
       layout: single
       author_profile: true
+      subscription: false
   # _readapaper
   - scope:
       path: ""
@@ -272,6 +274,7 @@ defaults:
       author_profile: true
       share: true
       comments: true
+      subscription: true
   # _teaching
   # - scope:
   #     path: ""
