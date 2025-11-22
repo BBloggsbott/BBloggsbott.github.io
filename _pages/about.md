@@ -5,6 +5,7 @@ author_profile: true
 redirect_from: 
   - /about/
   - /about.html
+subscription: false
 ---
 
 As a Machine Learning Engineer with five years of experience, I specialize in building and deploying complete, end-to-end ML solutions in production cloud environments. My passion lies in translating complex enterprise problems into impactful, data-driven applications. I focus on developing production-grade Natural Language Processing (NLP) and Decision Support systems.
