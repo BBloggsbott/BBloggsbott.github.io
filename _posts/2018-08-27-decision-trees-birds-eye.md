@@ -7,6 +7,7 @@ tags:
 redirect_from:
   - /Decision-Trees,-A-Bird-s-eye-view-and-an-Implementation
 comments: true
+description: Explore a bird's eye view of Decision Trees in Machine Learning. This step-by-step tutorial covers Python implementation using Scikit-learn, understanding entropy, and visualizing model performance.
 ---
 
 {% include base_path %}

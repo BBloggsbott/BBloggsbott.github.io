@@ -6,6 +6,7 @@ tags:
   - machine learning
   - llm
 comments: true
+description: Dive deep into the 'Attention Is All You Need' paper. This detailed guide deconstructs the Transformer architecture, explaining Self-Attention, Multi-Head Attention, and how it replaced RNNs in NLP.
 ---
 
 {% include base_path %}

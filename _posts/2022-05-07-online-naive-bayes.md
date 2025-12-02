@@ -6,6 +6,7 @@ tags:
   - machine learning
   - machine learning engineering
 comments: true
+description: Learn how to engineer a Naive Bayes model for Online Training. This guide explains how to break down the algorithm for incremental updates and use Redis to store parameters for real-time predictions.
 ---
 
 {% include base_path %}

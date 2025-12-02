@@ -6,6 +6,7 @@ tags:
   - machine learning
   - llm
 comments: true
+description: Understand the core of LLM Safety and Moderation. This deep dive covers AI alignment, training techniques like RLHF and Constitutional AI, and defenses against jailbreaking and prompt injection.
 ---
 
 {% include base_path %}

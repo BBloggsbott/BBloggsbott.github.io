@@ -8,6 +8,7 @@ tags:
 redirect_from:
     - /Convolutional-Neural-Network,-A-Bird-s-eye-view-with-an-implementation
 comments: true
+description: Explore Convolutional Neural Networks (CNN) with this bird's eye view guide. Learn key concepts like Convolution, Max Pooling, and Dropout, and follow a Python implementation using Keras on the Arabic Handwritten Characters Dataset.
 ---
 
 {% include base_path %}

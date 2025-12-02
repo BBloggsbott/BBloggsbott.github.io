@@ -5,6 +5,7 @@ permalink: /posts/2018/09/feature-selection/
 tags:
   - machine learning
 comments: true
+description: Improve your Machine Learning models with effective Feature Selection. This Python tutorial covers key techniques like Correlation Analysis and P-value Backward Elimination to optimize the Breast Cancer dataset.
 ---
 
 {% include base_path %}
