@@ -12,7 +12,6 @@ As a Machine Learning Engineer with five years of experience, I specialize in bu
 
 A core part of my work involves not just building the model, but also the surrounding infrastructure. I have hands-on experience in microservice architecture, using tools like Java and Spring Boot, to build scalable, robust backends for ML applications. I am also deeply involved in the MLOps lifecycle, defining best practices for model monitoring, versioning, and CI/CD integration to ensure that models perform reliably in production.
 
----
 
 ## Key Projects
 
@@ -25,7 +24,6 @@ I designed and built the core semantic parsing and Natural Language Processing (
 ### Custom Intent Detection Microservice
 I built and maintained a scalable, custom intent detection microservice, creating the backend infrastructure for users to train, deploy, and manage their own ML models within the chatbot ecosystem.
 
----
 
 ## Other Professional Experience
 
