@@ -79,8 +79,8 @@ $$
 Another advantage of using Matrices in machine learning is that it lets us speed up our processing. GPUs are really poweful at executing instructions in parallel that you can parallelize a large number of operations if you can represent them as matrix operations and perform them on a GPU.
 
 {% raw %}
-<div class="simd-visualizer" style="font-family: system-ui, sans-serif; max-width: 600px; margin: 0 auto; text-align: center; border: 1px solid #ddd; border-radius: 8px; padding: 20px; background: #fafafa;">
-  <h3 style="margin-top: 0;">Matrix Multiplication: CPU vs GPU</h3>
+<div class="simd-visualizer" style="font-family: system-ui, sans-serif; max-width: 600px; margin: 0 auto; text-align: center; border: 1px solid #ddd; border-radius: 8px; padding: 20px; background: #fafafa; color: #222;">
+  <h3 style="margin-top: 0; color: #222;">Matrix Multiplication: CPU vs GPU</h3>
   
   <div style="display: flex; justify-content: center; align-items: center; gap: 15px; margin-bottom: 20px;">
     <div id="matA" style="display: grid; grid-template-columns: repeat(3, 30px); gap: 5px;"></div>
@@ -93,16 +93,16 @@ Another advantage of using Matrices in machine learning is that it lets us speed
   <div style="display: flex; justify-content: center; gap: 10px;">
     <button onclick="runCPU()" style="padding: 10px 15px; border: none; background: #007bff; color: white; border-radius: 5px; cursor: pointer; font-weight: bold;">Compute Sequentially (CPU)</button>
     <button onclick="runGPU()" style="padding: 10px 15px; border: none; background: #28a745; color: white; border-radius: 5px; cursor: pointer; font-weight: bold;">Compute in Parallel (GPU)</button>
-    <button onclick="resetVis()" style="padding: 10px 15px; border: 1px solid #ccc; background: #fff; border-radius: 5px; cursor: pointer;">Reset</button>
+    <button onclick="resetVis()" style="padding: 10px 15px; border: 1px solid #ccc; background: #fff; border-radius: 5px; cursor: pointer; color: #222;">Reset</button>
   </div>
 
   <p id="vis-status" style="margin-top: 15px; font-weight: bold; min-height: 20px; color: #333;"></p>
 
   <style>
-    .cell { width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; background: #fff; border: 1px solid #ccc; border-radius: 4px; font-size: 14px; transition: all 0.2s; }
+    .cell { width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; background: #fff; border: 1px solid #ccc; border-radius: 4px; font-size: 14px; color: #222; transition: all 0.2s; }
     .cell.active-a { background: #ffeeba; border-color: #ffc107; transform: scale(1.1); z-index: 10;}
     .cell.active-b { background: #b8daff; border-color: #007bff; transform: scale(1.1); z-index: 10;}
-    .cell.result-active { background: #c3e6cb; border-color: #28a745; font-weight: bold; }
+    .cell.result-active { background: #c3e6cb; border-color: #28a745; font-weight: bold; color: #111; }
   </style>
 
   <script>
@@ -112,6 +112,7 @@ Another advantage of using Matrices in machine learning is that it lets us speed
 
     function renderMatrix(id, data, empty = false) {
       const container = document.getElementById(id);
+      if (!container) return;
       container.innerHTML = '';
       for (let i = 0; i < 3; i++) {
         for (let j = 0; j < 3; j++) {
@@ -129,7 +130,8 @@ Another advantage of using Matrices in machine learning is that it lets us speed
       renderMatrix('matA', A);
       renderMatrix('matB', B);
       renderMatrix('matC', [], true);
-      document.getElementById('vis-status').innerText = 'Ready.';
+      const statusEl = document.getElementById('vis-status');
+      if (statusEl) statusEl.innerText = 'Ready.';
     }
 
     function computeCell(r, c) {
@@ -145,8 +147,10 @@ Another advantage of using Matrices in machine learning is that it lets us speed
     function highlightRowCol(r, c) {
       clearHighlights();
       for(let k=0; k<3; k++) {
-        document.getElementById(`matA-${r}-${k}`).classList.add('active-a');
-        document.getElementById(`matB-${k}-${c}`).classList.add('active-b');
+        const cellA = document.getElementById(`matA-${r}-${k}`);
+        const cellB = document.getElementById(`matB-${k}-${c}`);
+        if (cellA) cellA.classList.add('active-a');
+        if (cellB) cellB.classList.add('active-b');
       }
     }
 
@@ -163,8 +167,10 @@ Another advantage of using Matrices in machine learning is that it lets us speed
         }
         highlightRowCol(r, c);
         const resCell = document.getElementById(`matC-${r}-${c}`);
-        resCell.innerText = computeCell(r, c);
-        resCell.classList.add('result-active');
+        if (resCell) {
+          resCell.innerText = computeCell(r, c);
+          resCell.classList.add('result-active');
+        }
 
         c++;
         if (c >= 3) { c = 0; r++; }
@@ -177,29 +183,34 @@ Another advantage of using Matrices in machine learning is that it lets us speed
       resetVis();
       document.getElementById('vis-status').innerText = 'Dispatching threads... Computing in parallel!';
       
-      // Highlight everything
       for(let i=0; i<3; i++) {
         for(let j=0; j<3; j++) {
-          document.getElementById(`matA-${i}-${j}`).classList.add('active-a');
-          document.getElementById(`matB-${i}-${j}`).classList.add('active-b');
+          const cellA = document.getElementById(`matA-${i}-${j}`);
+          const cellB = document.getElementById(`matB-${i}-${j}`);
+          if (cellA) cellA.classList.add('active-a');
+          if (cellB) cellB.classList.add('active-b');
         }
       }
 
-      // Compute all instantly
       animationTimeout = setTimeout(() => {
         for(let r=0; r<3; r++) {
           for(let c=0; c<3; c++) {
             const resCell = document.getElementById(`matC-${r}-${c}`);
-            resCell.innerText = computeCell(r, c);
-            resCell.classList.add('result-active');
+            if (resCell) {
+              resCell.innerText = computeCell(r, c);
+              resCell.classList.add('result-active');
+            }
           }
         }
         document.getElementById('vis-status').innerText = 'Done! 1 step completed across 9 parallel threads.';
-      }, 500); // Slight delay for dramatic effect
+      }, 500); 
     }
 
-    // Initialize
-    resetVis();
+    document.addEventListener('DOMContentLoaded', resetVis);
+    // Fallback in case the script loads after DOM is ready
+    if (document.readyState === "complete" || document.readyState === "interactive") {
+        resetVis();
+    }
   </script>
 </div>
 {% endraw %}
