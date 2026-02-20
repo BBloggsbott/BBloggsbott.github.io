@@ -78,6 +78,7 @@ $$
 
 Another advantage of using Matrices in machine learning is that it lets us speed up our processing. GPUs are really poweful at executing instructions in parallel that you can parallelize a large number of operations if you can represent them as matrix operations and perform them on a GPU.
 
+{% raw %}
 <div class="simd-visualizer" style="font-family: system-ui, sans-serif; max-width: 600px; margin: 0 auto; text-align: center; border: 1px solid #ddd; border-radius: 8px; padding: 20px; background: #fafafa;">
   <h3 style="margin-top: 0;">Matrix Multiplication: CPU vs GPU</h3>
   
@@ -201,5 +202,6 @@ Another advantage of using Matrices in machine learning is that it lets us speed
     resetVis();
   </script>
 </div>
+{% endraw %}
 
 There are more uses of matrices in machine learning. You'll learn about them as you understand the algorithms and their implementations.
