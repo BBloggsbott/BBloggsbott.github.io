@@ -5,6 +5,7 @@ permalink: /read-a-paper/attention-is-all-you-need/
 tags:
   - machine learning
   - llm
+  - paper-summary
 comments: true
 description: Dive deep into the 'Attention Is All You Need' paper. This detailed guide deconstructs the Transformer architecture, explaining Self-Attention, Multi-Head Attention, and how it replaced RNNs in NLP.
 ---
@@ -44,7 +45,7 @@ information from one step of a sequence to the next. This persisted
 information is called the **hidden state**, which acts as the network's
 memory.
 
-- **Sequential Computation:** An RNN processes a sequence token-by-token. The hidden state at a given step, $$h_t$$, is a function of the input at that step, $x_t$, and the hidden state from the previous step, $$h_{t-1}$$. The update is governed by the following equation:
+- **Sequential Computation:** An RNN processes a sequence token-by-token. The hidden state at a given step, $$h_t$$, is a function of the input at that step, $$x_t$$, and the hidden state from the previous step, $$h_{t-1}$$. The update is governed by the following equation:
 
   $$h_t = \tanh(W_{hh}h_{t-1} + W_{xh}x_t + b_h)$$
 
@@ -60,7 +61,7 @@ memory.
 
     1. **Time Step 1 ("the"):** The network receives the vector for "the" ($$x_1$$) and an initial hidden state ($$h_0$$, usually zeros). It calculates $$h_1$$, which now represents "the".
 
-    2. **Time Step 2 ("cat"):** The network receives the vector for "cat" ($$x_2$$) and the previous state ($$h_1$$). It combines them to produce $h_2$, which now represents "the cat".
+    2. **Time Step 2 ("cat"):** The network receives the vector for "cat" ($$x_2$$) and the previous state ($$h_1$$). It combines them to produce $$h_2$$, which now represents "the cat".
 
     3. **Time Step 3 ("sat"):** It receives "sat" ($$x_3$$) and $$h_2$$ to produce $$h_3$$, a representation of the full phrase "the cat sat".
 
