@@ -12,7 +12,8 @@ layout: null
     <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
     <generator>Jekyll v{{ jekyll.version }}</generator>
     {% assign papers = site['readapaper'] | default: site.readapaper %}
-    {% assign all_posts = site.posts | concat: papers | sort: 'date' | reverse %}
+    {% assign foundationalml = site['foundationalml'] | default: site.foundationalml %}
+    {% assign all_posts = site.posts | concat: papers | concat: foundationalml | sort: 'date' | reverse %}
     {% for post in all_posts limit:20 %}
       <item>
         <title>{{ post.title | xml_escape }}</title>

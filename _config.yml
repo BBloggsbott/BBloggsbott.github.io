@@ -54,7 +54,7 @@ author:
 
   # Social media
   artstation       : # Username
-  bluesky          : # "bsky.app" # Replace this with you Bluesky username
+  bluesky          : bbloggsbott.bsky.social # "bsky.app" # Replace this with you Bluesky username
   facebook         : # Username
   flickr           : # Username
   foursquare       : # Username
@@ -132,6 +132,8 @@ feed:
       path: "/feed/blog.xml"
     readapaper:
       path: "/feed/read-a-paper.xml"
+    foundationalml:
+      path: "/feed/foundational-ml.xml"
 
 
 # SEO Related
@@ -241,6 +243,9 @@ collections:
   readapaper:
     output: true
     permalink: /:collection/:path
+  foundationalml:
+    output: true
+    permalink: /:collection/:path
 
 
 # These settings control how pages and collections are included in the site
@@ -275,6 +280,17 @@ defaults:
       share: true
       comments: true
       subscription: true
+  # _foundationalml
+  - scope:
+      path: ""
+      type: foundationalml
+    values:
+      layout: single
+      author_profile: true
+      share: true
+      comments: true
+      subscription: true
+      sitemap: false
   # _teaching
   # - scope:
   #     path: ""
