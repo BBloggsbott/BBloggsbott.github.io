@@ -16,6 +16,7 @@ Differential Calculus is a branch of calculus that deals with derivates, which i
 ## Derivatives
 
 Lets look at an example. Consider an object travelling at a velocity w.r.t time defined by the function $$f(t)$$. Meaning, at $$t=0$$, the velocity is $$f(0)$$, at $$t=1$$, the velocity is $$f(1)$$ and so on. For the sake of simplicity, let's have $$f(t)$$ be a linear function which will look something like this:
+
 $$f(t) = a\cdot t + c$$, where $$a$$ and $$c$$ are constants.
 ![Linear Velocity Function]({{ base_path }}/images/foundational-ml/differential-calculus/linear-function.png)
 
