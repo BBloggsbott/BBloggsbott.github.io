@@ -15,4 +15,4 @@ description: Covers some math that will be useful to understand Machine Learning
 
 * Mathematical Notations
 * [Matrix Multiplication]({{ base_path }}/foundational-ml/math/matrix-multiplication)
-* Differential Calculus
+* [Differential Calculus]({{ base_path }}/foundational-ml/math/differential-calculus)
