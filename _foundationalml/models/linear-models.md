@@ -29,16 +29,21 @@ $$
 ![Mathematical Notation's Visualization]({{ base_path }}/images/foundational-ml/linear-models/mathematical-notation.png)
 
 When you have more than one feature, it becomes
+
 $$
 Y = \theta_0 +\theta_1 \cdot X_1 + \theta_2 \cdot X_2 + ...
 $$
+
 which can be simplified into
+
 $$
 \sum_{j=0}^{n} \theta_j \cdot X_j\ \ \ \ \ \ where, X_0=1\\
 $$
+
 Also written as $$Y = h(X)$$.
 
 The above summation can be represented using matrices (for $$n=2$$) as
+
 $$
 \theta = \begin{matrix}
 \theta_0 \\
@@ -59,44 +64,29 @@ To achieve this, we need to minimize the difference between $$h(x)$$ and $$Y$$ i
 $$
 \underset{\theta}{minimize}\ \frac{1}{2}\sum_{i=1}^{m}J(\theta)
 $$
+
 where $$J(\theta) = (h_\theta(x^{(i)}) - y^{(i)})^2$$, $$m$$ is the number of training samples, and $$x^{(i)}$$ and $$y^{(i)}$$ are individual training samples.
 
 *The $$\frac{1}{2}$$ is present just to make the gradient computation easier. When you differentiate the  squared component, the $$\frac{1}{2}$$ will get cancelled in the result*
 
-### Optimizing using Gradient De---
-title: 'Matrix Multiplcation'
-permalink: /foundational-ml/math/matrix-multiplication
-tags:
-  - machine learning
-  - foundational-ml
-  - math
-comments: true
-description: What are Matrices? How do you Multiply them? Why do you need them in ML?
----scent
-
+### Optimizing using Gradient Descent
 There are a lot of optimizers that can be used to minimize the cost function. In this case, let's look at [Gradient Descent]({{ base_path }}/foundational-ml/optimizers/gradient-descent).
 
 For the cost function $$J(\theta)$$ and training iteration $$j$$, Gradient Descent is written as
+
 $$
 \theta_j := \theta_j - \alpha\frac{\delta}{\delta\theta_j}J(\theta)
 $$
+
 where $$\alpha$$ is the learning rate and $$\theta=\begin{bmatrix}\theta_0 \\ \theta_1 \\ ... \\ \theta_n \end{bmatrix}$$
 
 So, continuing with the computation of the new value for $$\theta_j$$,
+
 $$
 \frac{\delta}{\delta\theta_j} J(\theta) = \frac{\delta}{\delta\theta_j} \frac{1}{2}\sum_{i=1}^{m}(h_\theta(x^{(i)}) - y^{(i)})^2
 $$
 
-Ignoring the [$$\Sigma$$]({{ base_path }}/foundational-ml/math/notations-and-terminologies#summ---
-title: 'Matrix Multiplcation'
-permalink: /foundational-ml/math/matrix-multiplication
-tags:
-  - machine learning
-  - foundational-ml
-  - math
-comments: true
-description: What are Matrices? How do you Multiply them? Why do you need them in ML?
----ation) and computing for a single training sample (for the sake of simplicity and the sum rule of differentiation),
+Ignoring the [$$\Sigma$$]({{ base_path }}/foundational-ml/math/notations-and-terminologies#summation) and computing for a single training sample (for the sake of simplicity and the sum rule of differentiation),
 
 $$
 = \frac{\delta}{\delta\theta_j} \frac{1}{2}(h_\theta(x) - y)^2 \\
@@ -105,27 +95,21 @@ $$
 $$
 
 None of the terms inside the [partial derivative]({{ base_path }}/foundational-ml/math/differential-calculus#partial-derivatives) depend on $$\theta_j$$ except for $$\theta_jx_j$$. So the partial derivative of all these terms are $$0$$ and for $$\theta_jx_j$$, it is $$x_j$$. Therefore, the above expression simplifies into
+
 $$
 = (h_\theta(x)-y)\cdot x_j
 $$
 
-That gives us $$\theta_j := \the---
-title: 'Matrix Multiplcation'
-permalink: /foundational-ml/math/matrix-multiplication
-tags:
-  - machine learning
-  - foundational-ml
-  - math
-comments: true
-description: What are Matrices? How do you Multiply them? Why do you need them in ML?
----ta_j - \alpha(h_\theta(x)-y)\cdot x_j$$.
+That gives us $$\theta_j := \theta_j - \alpha(h_\theta(x)-y)\cdot x_j$$.
 
 The above is for just one training sample. For the entire training set, we get
+
 $$
 \theta_j := \theta_j - \alpha\sum_{i=1}^m(h_\theta(x^{(i)})-y^{(i)})\cdot x^{(i)}_j \ \ \ \ -\ Eq.\ 1
 $$
 
 and the derivative of the cost function when defined using all the training samples is
+
 $$
 \frac{\delta}{\delta\theta_j} J(\theta) = \sum_{i=1}^m(h_\theta(x^{(i)})-y^{(i)})\cdot x^{(i)}_j
 $$
