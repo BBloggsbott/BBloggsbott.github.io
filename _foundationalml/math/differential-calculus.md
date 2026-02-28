@@ -40,7 +40,7 @@ A derivative of a function $$f(x)$$ can be represented in several ways, some of 
 For some rules about computing derivates and derivatives of some common functions, check [here](https://www.mathsisfun.com/calculus/derivatives-rules.html).
 
 
-## Partial Derivatives
+## Partial Derivatives {#partial-derivatives}
 
 In the above section we saw an example where we had a function that had only one variable. Now, consider a function that has multiple variables $$f(x,y,z,...)$$.
 
@@ -51,7 +51,7 @@ Partial derivative of $$f$$ w.r.t $$x$$ is represented as $$\frac{\delta f}{\del
 Computing the a partial derivative follows the same rules as a regular derivate, you just treat all the variables w.r.t which you're computing the gradient as constants. So in the above function $$f(x,y,z...)$$, for $$\frac{\delta f}{\delta x}$$, you'll treat $$x$$ as the only variable.
 
 
-## Why is this useful?
+## Why is this useful? {#gradients}
 
 Gradients are a large part of training machine learning algorithms and optimization functions. A gradient of the function $$f$$ is just a bundle of all the partial derivatives of the function.
 $$

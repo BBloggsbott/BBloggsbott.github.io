@@ -9,9 +9,11 @@ comments: true
 description: What are Matrices? How do you Multiply them? Why do you need them in ML?
 ---
 
+{% include base_path %}
+
 ## What are Matrices?
 
-Matrices are a rectangular arrangement of data. They can be numbers, variables, symbols or expressions. These are represented in rows and columns.
+Matrices are a rectangular arrangement of data. They can be numbers, variables, symbols or expressions. These are({{ base_path }}/foundational-ml/math/notations-and-terminologies#maximas-and-minimas) represented in rows and columns.
 Here's an example:
 $$
 numbers = \begin{bmatrix}
@@ -28,7 +30,7 @@ jackfruit & tomato & papaya \\
 \end{bmatrix}
 $$
 
-The shape of a matrix is represented as the `number of rows X number of columns`. The shape of the matrix `numbers` is `3X3` and the shape of the matrix fruits is `2X3`.
+The shape of a matrix is represented as the ({{ base_path }}/foundational-ml/math/notations-and-terminologies#maximas-and-minimas)`number of rows X number of columns`. The shape of the matrix `numbers` is `3X3` and the shape of the matrix fruits is `2X3`.
 
 ## Matrix Multiplication
 Consider two matrices
@@ -60,7 +62,7 @@ $$
 Check [this](https://www.mathsisfun.com/algebra/matrix-multiplying.html) out if you want a more visual explanation or just scroll to the end of this page for a visualizer.
 
 * Matrix multiplication is not Commutative. So $$AB != BA$$.
-* To be able to multiply two matrices, the number of rows of the first matrix should be equal to the number of rows of the second matrix.
+* To be able to multiply two matrices, the number of columns of the first matrix should be equal to the number of rows of the second matrix.
 
 ## Why is this important in ML?
 Machine Learning has a lot of linear algebra. We can represent these operations as matrices.
