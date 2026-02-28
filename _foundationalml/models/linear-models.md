@@ -89,8 +89,14 @@ $$
 Ignoring the [$$\Sigma$$]({{ base_path }}/foundational-ml/math/notations-and-terminologies#summation) and computing for a single training sample (for the sake of simplicity and the sum rule of differentiation),
 
 $$
-= \frac{\delta}{\delta\theta_j} \frac{1}{2}(h_\theta(x) - y)^2 \\
-= 2\cdot\frac{1}{2}(h_\theta(x)-y)\cdot\frac{\delta}{\delta\theta_j}(h_\theta(x)-y) \\
+= \frac{\delta}{\delta\theta_j} \frac{1}{2}(h_\theta(x) - y)^2
+$$
+
+$$
+= 2\cdot\frac{1}{2}(h_\theta(x)-y)\cdot\frac{\delta}{\delta\theta_j}(h_\theta(x)-y)
+$$
+
+$$
 = (h_\theta(x)-y)\cdot\frac{\delta}{\delta\theta_j}(\theta_0x_0+\theta_1x_1...+\theta_nx_n-y)
 $$
 
