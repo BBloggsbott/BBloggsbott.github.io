@@ -13,7 +13,7 @@ description: Linear Models are one of the simplest Machine Learning algorithms. 
 
 
 ## Linear Regression
- Linear Regression is a method used to model the relation ship between a dependent variable and one or more independent variables by fitting a Linear Equation to the data. We basically try to find the best line (or plane or hyperplane depending on the dimensionality) that represents our data.
+ Linear Regression is a method used to model the relationship between a dependent variable and one or more independent variables by fitting a Linear Equation to the data. We basically try to find the best line (or plane or hyperplane depending on the dimensionality) that represents our data.
 
  ![Linear Regression]({{ base_path }}/images/foundational-ml/linear-models/linear-regression.png)
 
@@ -128,8 +128,8 @@ for j = 0, 1, ..., n
 
 This operation is also called **Batch Gradient Descent** because we process the entire dataset for every step in the descent.
 
-Performing the Gradient Descent multiple will eventually minimize the cost and give us a $$\theta$$ that would be best fitting linear equation that models/describes the training data.
+Performing the Gradient Descent multiple times will eventually minimize the cost and give us a $$\theta$$ that would be best fitting linear equation that models/describes the training data.
 
 ## Additional Info
 * The cost function (MSE) is a quadratic function. This means it has exactly one [minima]({{ base_path }}/foundational-ml/math/notations-and-terminologies#maximas-and-minimas) (local and global minima are the same).
-* For Linear Regression, you can find the optimal $$\theta$$ (or global maxima) in a single step using [Normal Equations]({{ base_path }}/foundational-ml/math/normal-equations).
+* For Linear Regression, you can find the optimal $$\theta$$ (or global minima) in a single step using [Normal Equations]({{ base_path }}/foundational-ml/math/normal-equations).
