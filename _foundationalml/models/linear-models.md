@@ -13,15 +13,13 @@ description: Linear Models are one of the simplest Machine Learning algorithms. 
 
 
 ## Linear Regression
- Linear Regression is a method used to model the relationship between a dependent variable and one or more independent variables by fitting a Linear Equation to the data. We basically try to find the best line (or plane or hyperplane depending on the dimensionality) that represents our data.
+Linear Regression is a method used to model the relationship between a dependent variable and one or more independent variables by fitting a Linear Equation to the data. We basically try to find the best line (or plane or hyperplane depending on the dimensionality) that represents our data.
 
- ![Linear Regression]({{ base_path }}/images/foundational-ml/linear-models/linear-regression.png)
+![Linear Regression]({{ base_path }}/images/foundational-ml/linear-models/linear-regression.png)
 
+## How Does it Work?
 
-
- ## How Does it Work?
-
- A linear equation with one independent variable (or feature) looks like this.
+A linear equation with one independent variable (or feature) looks like this.
 $$
 Y = \theta_0 + \theta_1\cdot X
 $$
@@ -72,13 +70,13 @@ where $$J(\theta) = (h_\theta(x^{(i)}) - y^{(i)})^2$$, $$m$$ is the number of tr
 ### Optimizing using Gradient Descent
 There are a lot of optimizers that can be used to minimize the cost function. In this case, let's look at [Gradient Descent]({{ base_path }}/foundational-ml/optimizers/gradient-descent).
 
-For the cost function $$J(\theta)$$ and training iteration $$j$$, Gradient Descent is written as
+For the cost function $$J(\theta)$$ and model parameter $$\theta_j$$, Gradient Descent is written as
 
 $$
 \theta_j := \theta_j - \alpha\frac{\delta}{\delta\theta_j}J(\theta)
 $$
 
-where $$\alpha$$ is the learning rate and $$\theta=\begin{bmatrix}\theta_0 \\ \theta_1 \\ ... \\ \theta_n \end{bmatrix}$$
+where $$\alpha$$ is the learning rate.
 
 So, continuing with the computation of the new value for $$\theta_j$$,
 
@@ -111,7 +109,7 @@ That gives us $$\theta_j := \theta_j - \alpha(h_\theta(x)-y)\cdot x_j$$.
 The above is for just one training sample. For the entire training set, we get
 
 $$
-\theta_j := \theta_j - \alpha\sum_{i=1}^m(h_\theta(x^{(i)})-y^{(i)})\cdot x^{(i)}_j \ \ \ \ -\ Eq.\ 1
+\theta_j := \theta_j - \alpha\frac{1}{m}\sum_{i=1}^m(h_\theta(x^{(i)})-y^{(i)})\cdot x^{(i)}_j \ \ \ \ -\ Eq.\ 1
 $$
 
 and the derivative of the cost function when defined using all the training samples is
@@ -119,6 +117,8 @@ and the derivative of the cost function when defined using all the training samp
 $$
 \frac{\delta}{\delta\theta_j} J(\theta) = \sum_{i=1}^m(h_\theta(x^{(i)})-y^{(i)})\cdot x^{(i)}_j
 $$
+
+We're including a $$\frac{1}{m}$$ to avoid exploding gradients. When are add the gradients of all the training samples, the step size we take might increase with the size of the dataset. To avoid this, we're averaging out the gradients using $$\frac{1}{m}$$.
 
 This is to optimize one parameter (which is used by one feature in the input matrix). So for a training sample with $$n$$ features, Gradient descent becomes
 ```
