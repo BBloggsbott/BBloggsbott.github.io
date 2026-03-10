@@ -1,5 +1,5 @@
 ---
-title: 'Attention is all you need'
+title: "Understanding the Transformer: A Deconstruction of 'Attention Is All You Need'"
 date: 2025-10-13
 permalink: /read-a-paper/attention-is-all-you-need/
 tags:
