@@ -133,3 +133,12 @@ Performing the Gradient Descent multiple times will eventually minimize the cost
 ## Additional Info
 * The cost function (MSE) is a quadratic function. This means it has exactly one [minima]({{ base_path }}/foundational-ml/math/notations-and-terminologies#maximas-and-minimas) (local and global minima are the same).
 * For Linear Regression, you can find the optimal $$\theta$$ (or global minima) in a single step using [Normal Equations]({{ base_path }}/foundational-ml/math/normal-equations).
+
+## Simple Implementation in Python
+
+<details>
+  <summary><b>Show Code</b></summary>
+<br>
+  {% gist fcb5eb918e1b49dfed7209167c06d14f linear-regression-py %}
+
+</details>
