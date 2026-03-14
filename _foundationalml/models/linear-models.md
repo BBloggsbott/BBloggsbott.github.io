@@ -139,6 +139,6 @@ Performing the Gradient Descent multiple times will eventually minimize the cost
 <details>
   <summary><b>Show Code</b></summary>
 <br>
-  {% gist fcb5eb918e1b49dfed7209167c06d14f linear-regression-py %}
+  {% gist fcb5eb918e1b49dfed7209167c06d14f linear-regression.py %}
 
 </details>
