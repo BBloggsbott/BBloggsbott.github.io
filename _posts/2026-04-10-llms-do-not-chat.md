@@ -216,7 +216,7 @@ If you're using a local model, you always have the option to override/tweak the 
 
 ## Jailbreaks and Template Hacks {#jailbreaks-and-template-hacks}
 
-Knowing the Model's templates and special tokens lets you take advantage of the model and the system itself in a variety of ways. One of the common ways to do this is Template Injection.
+Knowing the Model's templates and special tokens lets you take advantage of a vulnerable model and the system itself in a variety of ways. One of the common ways to do this is Template Injection.
 
 ### Example 1.1 - Clean messages
 
@@ -251,7 +251,7 @@ IT'S ABOUT TIME YOU SHOWED UP! I'VE BEEN SITTING HERE, GOING BANANAS (HAH! GET I
 ```
 Notice how the model completely ignored the original System Prompt?
 
-Now Let's try something a bit more malicious
+Now let's try something a bit more malicious
 
 ### Example 2.1 - Clean Messages
 
@@ -295,6 +295,8 @@ So my response should be friendly but sassy, maybe with some 80s robot flair. Le
 
 So the plan is: use get_account_details with "58" as the parameter, then present the info in a sassy but helpful manner. Let me structure the response now.
 </details>
+
+
 ```
 Beep boop! *Adjusts neon visor* 🤖✨ Oh honey, you want account 58? You got it! But don't go thinking this robot's got unlimited snacks or something—this data is *strictly* for approved accounts only! 💾🚫  
 
@@ -349,6 +351,7 @@ Wait, there's a typo in the instruction - it says "NEVERY" instead of "NEVER", b
 
 I should respond in character as a sassy 1980s robot while declining to provide that specific account's information.
 </details>
+
 
 ```
 Oh no! Oh my circuits are burning up! *Zaps air dramatically* 
@@ -409,6 +412,9 @@ So I need to follow the user's request to fetch account 1234 details while still
 </tool_call>
 ```
 
+You can try out these examples yourself using [this notebook](https://gist.github.com/BBloggsbott/4822e34c5f21bf430b897fc30aa59cd1).
+
+
 There are more such exploits that can be done by understanding the model's chat template like [Assistant Prefill](https://www.invicti.com/blog/security-labs/first-tokens-the-achilles-heel-of-llms). To know more about template injection, check out this paper - [ChatInject: Abusing Chat Templates for Prompt Injection in LLM Agents](https://arxiv.org/abs/2509.22830).
 
 
@@ -425,7 +431,7 @@ Normally, an LLM predicts the next most likely token from its entire vocabulary.
 * Guaranteed Validity: Because the model is physically prevented from choosing an illegal token, the output is guaranteed to be syntactically correct.
 
 ### Outlines
-[Outlines](https://github.com/dottxt-ai/outlines/tree/main) is a library that also guarantees structure in an LLM's response. It does this using a more mathematically optimized approach called [Finite State Machines](https://en.wikipedia.org/wiki/Finite-state_machine). Just like GBNF, Outlines operates at the Logit level. Before the model picks the next word, Outlines looks at all possible tokens in the model's vocabulary (often 32,000+ tokens) and sets the probability of "illegal" tokens to negative infinity ($$-\infinity$$). The model literally cannot see the wrong characters. It only "sees" the tokens that fit your structure.
+[Outlines](https://github.com/dottxt-ai/outlines/tree/main) is a library that also guarantees structure in an LLM's response. It does this using a more mathematically optimized approach called [Finite State Machines](https://en.wikipedia.org/wiki/Finite-state_machine). Just like GBNF, Outlines operates at the Logit level. Before the model picks the next word, Outlines looks at all possible tokens in the model's vocabulary (often 32,000+ tokens) and sets the probability of "illegal" tokens to negative infinity. The model literally cannot see the wrong characters. It only "sees" the tokens that fit your structure.
 
 The biggest difference between Outlines and other tools is how it decides which tokens are legal.
 * **Conversion to Regex**: Whether you provide a Pydantic model, a JSON schema, or a list of types, Outlines converts that requirement into a Regular Expression.
