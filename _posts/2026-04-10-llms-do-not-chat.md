@@ -7,7 +7,7 @@ tags:
   - llm
   - ai agents
 comments: true
-description: A technical deep dive into LLM inference APIs. Learn how chat completions translate JSON to raw strings using Jinja templates and structured generation.
+description: Discover how LLMs actually work under the hood: from chat templates and Jinja to structured outputs, jailbreaks, and prompt injection attacks.
 ---
 
 {% include base_path %}
