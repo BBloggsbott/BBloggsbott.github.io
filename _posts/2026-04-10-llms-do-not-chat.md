@@ -7,7 +7,7 @@ tags:
   - llm
   - ai agents
 comments: true
-description: Discover how LLMs actually work under the hood: from chat templates and Jinja to structured outputs, jailbreaks, and prompt injection attacks.
+description: Discover how LLMs actually work under the hood, from chat templates and Jinja to structured outputs, jailbreaks, and prompt injection attacks.
 ---
 
 {% include base_path %}
