@@ -118,7 +118,7 @@ Lets take this Chat Completion Request as an example.
 <details>
   <summary><b>Click to see the raw Jinja Template</b></summary>
 <br>
-{% include post-contents\llama-jinja-template.md %}
+{% include post-contents/llama-jinja-template.md %}
 </details>
 
 The Raw string after processing the template will look like this:
@@ -157,13 +157,13 @@ Respond in the format {"name": function name, "parameters": dictionary of argume
 
 What is the weather in Paris?<|eot_id|><|start_header_id|>assistant<|end_header_id|>
 ```
-*Yes, the tools are still a JSON. I mentioned that they're not a great option for use in the prompt. I'll add an explanation for why they're used here at the [end of this post({{ base_path }}/posts/2026/04/llms-do-not-chat/#footnote)*
+*Yes, the tools are still a JSON. I mentioned that they're not a great option for use in the prompt. I'll add an explanation for why they're used here at the [end of this post]({{ base_path }}/posts/2026/04/llms-do-not-chat/#footnote)*
 
 ### Qwen3.5-9B
 <details>
   <summary><b>Click to see the raw Jinja Template</b></summary>
 <br>
-{% include post-contents\qwen-jinja-template.md %}
+{% include post-contents/qwen-jinja-template.md %}
 </details>
 
 The Raw string after processing the template will look like this:
