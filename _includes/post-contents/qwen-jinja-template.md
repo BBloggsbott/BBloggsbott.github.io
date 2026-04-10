@@ -1,4 +1,5 @@
-```jinja
+{% raw %}
+```
 {%- set image_count = namespace(value=0) %}
 {%- set video_count = namespace(value=0) %}
 {%- macro render_content(content, do_vision_count, is_system_content=false) %}
@@ -154,3 +155,4 @@
     {%- endif %}
 {%- endif %}
 ```
+{% endraw %}
