@@ -1,4 +1,3 @@
-{% raw %}
 ```jinja
 {%- set image_count = namespace(value=0) %}
 {%- set video_count = namespace(value=0) %}
@@ -155,4 +154,3 @@
     {%- endif %}
 {%- endif %}
 ```
-{% endraw %}

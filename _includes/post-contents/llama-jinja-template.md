@@ -1,4 +1,3 @@
-{% raw %}
 ```jinja
 {{- bos_token }}
 {%- if custom_tools is defined %}
@@ -94,4 +93,3 @@
     {{- '<|start_header_id|>assistant<|end_header_id|>\n\n' }}
 {%- endif %}
 ```
-{% endraw %}
