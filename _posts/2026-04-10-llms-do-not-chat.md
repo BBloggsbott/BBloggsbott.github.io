@@ -76,7 +76,7 @@ This allows Jinja to solve all the problems in the older approach.
 
 Almost all models available on Huggingface will have the chat template along with the model. For example, you can find `Llama-3.2-3B-Instruct`'s chat template [here](https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/blob/main/tokenizer_config.json#L2053).
 
-*Fun Fact! This blog is build on top of Jekyll, which uses a templating engine called Liquid, which uses the exact same syntax as Jinja*
+*Fun Fact! This blog is build on top of Jekyll, which uses a templating engine called Liquid, which uses the exact same syntax as Jinja. Adding the jinja templates directly to the post, broke the entire page. So I had to move them to github. You can still see them in this post*
 
 
 ## Comparing Two Chat Templates
@@ -118,7 +118,7 @@ Lets take this Chat Completion Request as an example.
 <details>
   <summary><b>Click to see the raw Jinja Template</b></summary>
 <br>
-{% include post-contents/llama-jinja-template.md %}
+{% gist 5ea67894c7e317981464a0421cbcd441 llama-3.2-jinja-template.jinja %}
 </details>
 
 The Raw string after processing the template will look like this:
@@ -163,7 +163,7 @@ What is the weather in Paris?<|eot_id|><|start_header_id|>assistant<|end_header_
 <details>
   <summary><b>Click to see the raw Jinja Template</b></summary>
 <br>
-{% include post-contents/qwen-jinja-template.md %}
+{% gist 5ea67894c7e317981464a0421cbcd441 qwen3.5-9B.jinja %}
 </details>
 
 The Raw string after processing the template will look like this:
