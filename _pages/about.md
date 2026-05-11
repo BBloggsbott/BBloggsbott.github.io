@@ -8,25 +8,27 @@ redirect_from:
 subscription: false
 ---
 
-As a Machine Learning Engineer with five years of experience, I specialize in building and deploying complete, end-to-end ML solutions in production cloud environments. My passion lies in translating complex enterprise problems into impactful, data-driven applications. I focus on developing production-grade Natural Language Processing (NLP) and Decision Support systems.
-
-A core part of my work involves not just building the model, but also the surrounding infrastructure. I have hands-on experience in microservice architecture, using tools like Java and Spring Boot, to build scalable, robust backends for ML applications. I am also deeply involved in the MLOps lifecycle, defining best practices for model monitoring, versioning, and CI/CD integration to ensure that models perform reliably in production.
+As a Lead Data Scientist and Machine Learning Engineer with over five years of experience, I specialize in building and deploying complete, end-to-end ML solutions in production cloud environments. My passion lies in translating complex enterprise problems into impactful, data-driven applications — spanning advanced NLP pipelines, decision support systems, and large-scale model deployment infrastructure.
+A core part of my work involves not just building models, but also the surrounding ecosystem. I have hands-on experience in microservice architecture using Java and Spring Boot to build scalable, robust backends for ML applications. I'm also deeply involved in the MLOps lifecycle — defining best practices for model monitoring, feedback loops, data and model version tracking, and CI/CD integration to ensure models perform reliably in production.
 
 
 ## Key Projects
 
-### Decision Support System (Root Cause Analysis)
-I engineered and deployed a primary Decision Support system designed for Root Cause Analysis (RCA). This system uses data analysis to automatically diagnose fluctuations in key business metrics and provide predictive insights.
-
-### Query-to-Graph Chatbot (NLP)
-I designed and built the core semantic parsing and Natural Language Processing (NLP) capabilities for a Query-to-Graph chatbot. This system allows users to ask complex questions in natural language and get answers from structured data. I later enhanced this distributed system with multilingual support and performance optimizations to improve its scalability.
-
 ### Custom Intent Detection Microservice
-I built and maintained a scalable, custom intent detection microservice, creating the backend infrastructure for users to train, deploy, and manage their own ML models within the chatbot ecosystem.
+I engineered a production-scale Custom Intent Detection microservice that enables customers to train models on their own data. The system oversees 10,000+ live custom models handling approximately 10 million daily requests — one of the highest-scale ML deployments I've worked on end-to-end.
 
+### Root Cause Analysis (RCA) — Decision Support System
+I built and deployed an RCA product feature that combines Generative AI and data analysis techniques to proactively alert business leaders about anomalies in their key business metrics. The system surfaces AI-generated potential root causes alongside the anomaly signals, turning raw data into actionable intelligence. I'm currently spearheading enhancements to support higher customer data volumes and improved anomaly detection throughput.
+
+### Query-to-Graph Agentic System
+I designed and implemented a Query-to-Graph agentic system that enables customers to build analytical dashboards and conduct data-driven conversations using natural language queries — bringing semantic parsing and NLP to structured business data.
+
+### LLM Migration & Evaluation Framework
+I directed the transition of production features from proprietary LLMs to open-source LLaMA and Qwen models, applying quantization techniques and evaluating output quality using MLflow's LLM-as-a-Judge framework. I'm also architecting an organization-wide evaluation framework for agent-based AI features, standardizing quality measurement across agentic workflows.
 
 ## Other Professional Experience
 
-* **Conversational AI:** I developed and deployed a production-grade model for handling conversational AI ("small talk"), integrating it into the existing chatbot framework to improve user engagement.
-* **MLOps Platforming:** I contributed key research and proof-of-concepts for the design of a company-wide MLOps platform, helping to define best practices for model performance tracking and CI/CD integration.
-
+* **Embedding Service**: Designed and deployed a production-grade embedding service by quantizing the LaBSE model and building a high-performance inference layer for large-scale use.
+* **Entity Extraction**: Built a service to identify and extract structured entities from support tickets and live chat conversations.
+MLOps Platform: Designed an organization-wide MLOps framework covering model monitoring, feedback loops, and data and model version tracking.
+* **Conversational AI**: Developed and integrated a conversational AI model for small talk within the chatbot framework, and implemented Global Feedback Flows to drive continuous product improvement.
