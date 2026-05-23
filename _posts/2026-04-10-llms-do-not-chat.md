@@ -24,7 +24,7 @@ The following is a conversation with an AI assistant. The assistant is helpful, 
 Human: Hello, who are you?
 AI:
 ```
-The LLM would then generate the best sequence of text to follow the prompt, and that was considered to be the model's repsonse.
+The LLM would then generate the best sequence of text to follow the prompt, and that was considered to be the model's response.
 
 
 The Chat completion endpoints are wrappers that similarly format the messages before sending them to the completion engine.
