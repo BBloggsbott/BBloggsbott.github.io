@@ -2,7 +2,6 @@
   "basics": {
     "name": "Vishal Ramesh",
     "email": "vishal27.rs@gmail.com",
-    "phone": "+91-9486566843",
     "website": "https://vishalramesh.com",
     "summary": "Results-driven Machine Learning Engineer with over 5 years of experience designing, building, and deploying scalable end-to-end ML solutions in production cloud environments. Expertise in developing production-grade systems that handle millions of requests daily, including advanced NLP pipelines, decision support systems, and robust large-scale model deployment infrastructures. Specializes in microservice architecture (Java, Spring Boot) and MLOps best practices, effectively translating complex enterprise challenges into impactful, data-driven applications.",
     "location": {
